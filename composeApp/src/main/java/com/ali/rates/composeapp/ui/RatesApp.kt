@@ -1,6 +1,6 @@
-package com.ali.rates.composeapp.ui
-
 @file:OptIn(ExperimentalMaterial3Api::class)
+
+package com.ali.rates.composeapp.ui
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
