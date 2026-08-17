@@ -1,5 +1,7 @@
 package com.ali.rates.composeapp.ui
 
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.CurrencyExchange

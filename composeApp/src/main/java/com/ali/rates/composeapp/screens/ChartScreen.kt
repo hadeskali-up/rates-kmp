@@ -99,7 +99,8 @@ fun ChartScreen(
                             description.isEnabled = false
                             legend.isEnabled = false
                             setDrawGridBackground(false)
-                            setGridColor(0x0FFFFFFF)
+                            axisLeft.setGridColor(0x0FFFFFFF)
+                            xAxis.setGridColor(0x0FFFFFFF)
                         }
                     },
                     update = { chart ->

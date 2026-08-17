@@ -21,7 +21,9 @@ import io.ktor.client.statement.*
  *  - api.frankfurter.dev/v1 : ECB rates, historical timeseries (~30 currencies)
  *  - jsDelivr CDN (fawazahmed0/currency-api) : currency display names
  */
-class FxService(private val client: HttpClient = defaultHttpClient()) {
+class FxService private constructor(private val client: HttpClient) {
+
+    constructor() : this(defaultHttpClient())
 
     companion object {
         internal val JSON = Json { ignoreUnknownKeys = true }

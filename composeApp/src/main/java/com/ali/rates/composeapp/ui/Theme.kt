@@ -24,7 +24,6 @@ private val AmoledColors = darkColorScheme(
     surfaceVariant = Color(0xFF141414),
     onSurfaceVariant = Color(0xFFB3B3B3),
     surfaceContainer = Color(0xFF141414),
-    onSurfaceContainer = Color(0xFFEDEDED),
     surfaceContainerLow = Color(0xFF0D0D0D),
     surfaceContainerHigh = Color(0xFF1C1C1C),
     surfaceContainerHighest = Color(0xFF262626),
