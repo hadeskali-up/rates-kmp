@@ -23,7 +23,14 @@ import io.ktor.client.statement.*
  */
 class FxService private constructor(private val client: HttpClient) {
 
-    constructor() : this(defaultHttpClient())
+    constructor() : this(
+        try {
+            defaultHttpClient()
+        } catch (_: Exception) {
+            // Fall back to engine-default client if plugin setup fails.
+            HttpClient()
+        }
+    )
 
     companion object {
         internal val JSON = Json { ignoreUnknownKeys = true }
