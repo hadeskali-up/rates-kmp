@@ -6,7 +6,7 @@ import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.jsonObject
 import kotlinx.serialization.json.jsonPrimitive
 import kotlinx.datetime.Clock
-import kotlinx.datetime.DateTimePeriod
+import kotlinx.datetime.DatePeriod
 import kotlinx.datetime.LocalDate
 import kotlinx.datetime.TimeZone
 import kotlinx.datetime.minus
@@ -60,7 +60,7 @@ class FxService(private val client: HttpClient = defaultHttpClient()) {
     suspend fun timeseries(base: String, quote: String, days: Int): Map<String, Double> =
         withContext(Dispatchers.Default) {
             val end = todayMyt()
-            val start = end.minus(DateTimePeriod(days = days))
+            val start = end.minus(DatePeriod(days = days))
             val url = "$FRANKFURTER/$start..$end?base=$base&symbols=$quote"
             val body = client.get(url).bodyAsText()
             val rates = JSON.parseToJsonElement(body).jsonObject["rates"]?.jsonObject
